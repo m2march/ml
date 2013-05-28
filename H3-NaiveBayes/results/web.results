@@ -1,0 +1,135 @@
+mallet-2.0.7/class:mallet-2.0.7/lib/mallet-deps.jar:
+
+-------------------- Trial 0  --------------------
+
+Trial 0 Training NaiveBayesTrainer with 22 instances
+Trial 0 Training NaiveBayesTrainer finished
+Trial 0 Trainer NaiveBayesTrainer training data accuracy= 1.0
+Trial 0 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=1.0
+ label   0   1  |total
+  0 de   1   .  |1
+  1 en   .   1  |1
+
+Trial 0 Trainer NaiveBayesTrainer test data accuracy= 1.0
+
+-------------------- Trial 1  --------------------
+
+Trial 1 Training NaiveBayesTrainer with 21 instances
+Trial 1 Training NaiveBayesTrainer finished
+Trial 1 Trainer NaiveBayesTrainer training data accuracy= 1.0
+Trial 1 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=1.0
+ label   0   1  |total
+  0 de   1   .  |1
+  1 en   .   2  |2
+
+Trial 1 Trainer NaiveBayesTrainer test data accuracy= 1.0
+
+-------------------- Trial 2  --------------------
+
+Trial 2 Training NaiveBayesTrainer with 22 instances
+Trial 2 Training NaiveBayesTrainer finished
+Trial 2 Trainer NaiveBayesTrainer training data accuracy= 1.0
+Trial 2 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=1.0
+ label   0   1  |total
+  0 de   1   .  |1
+  1 en   .   1  |1
+
+Trial 2 Trainer NaiveBayesTrainer test data accuracy= 1.0
+
+-------------------- Trial 3  --------------------
+
+Trial 3 Training NaiveBayesTrainer with 21 instances
+Trial 3 Training NaiveBayesTrainer finished
+Trial 3 Trainer NaiveBayesTrainer training data accuracy= 1.0
+Trial 3 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=1.0
+ label   0   1  |total
+  0 de   3   .  |3
+  1 en   .   .  |0
+
+Trial 3 Trainer NaiveBayesTrainer test data accuracy= 1.0
+
+-------------------- Trial 4  --------------------
+
+Trial 4 Training NaiveBayesTrainer with 22 instances
+Trial 4 Training NaiveBayesTrainer finished
+Trial 4 Trainer NaiveBayesTrainer training data accuracy= 1.0
+Trial 4 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=1.0
+ label   0   1  |total
+  0 de   1   .  |1
+  1 en   .   1  |1
+
+Trial 4 Trainer NaiveBayesTrainer test data accuracy= 1.0
+
+-------------------- Trial 5  --------------------
+
+Trial 5 Training NaiveBayesTrainer with 22 instances
+Trial 5 Training NaiveBayesTrainer finished
+Trial 5 Trainer NaiveBayesTrainer training data accuracy= 1.0
+Trial 5 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=1.0
+ label   0   1  |total
+  0 de   1   .  |1
+  1 en   .   1  |1
+
+Trial 5 Trainer NaiveBayesTrainer test data accuracy= 1.0
+
+-------------------- Trial 6  --------------------
+
+Trial 6 Training NaiveBayesTrainer with 21 instances
+Trial 6 Training NaiveBayesTrainer finished
+Trial 6 Trainer NaiveBayesTrainer training data accuracy= 1.0
+Trial 6 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=1.0
+ label   0   1  |total
+  0 de   1   .  |1
+  1 en   .   2  |2
+
+Trial 6 Trainer NaiveBayesTrainer test data accuracy= 1.0
+
+-------------------- Trial 7  --------------------
+
+Trial 7 Training NaiveBayesTrainer with 22 instances
+Trial 7 Training NaiveBayesTrainer finished
+Trial 7 Trainer NaiveBayesTrainer training data accuracy= 1.0
+Trial 7 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=1.0
+ label   0   1  |total
+  0 de   1   .  |1
+  1 en   .   1  |1
+
+Trial 7 Trainer NaiveBayesTrainer test data accuracy= 1.0
+
+-------------------- Trial 8  --------------------
+
+Trial 8 Training NaiveBayesTrainer with 21 instances
+Trial 8 Training NaiveBayesTrainer finished
+Trial 8 Trainer NaiveBayesTrainer training data accuracy= 1.0
+Trial 8 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=1.0
+ label   0   1  |total
+  0 de   2   .  |2
+  1 en   .   1  |1
+
+Trial 8 Trainer NaiveBayesTrainer test data accuracy= 1.0
+
+-------------------- Trial 9  --------------------
+
+Trial 9 Training NaiveBayesTrainer with 22 instances
+Trial 9 Training NaiveBayesTrainer finished
+Trial 9 Trainer NaiveBayesTrainer training data accuracy= 1.0
+Trial 9 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=1.0
+ label   0   1  |total
+  0 de   .   .  |0
+  1 en   .   2  |2
+
+Trial 9 Trainer NaiveBayesTrainer test data accuracy= 1.0
+
+NaiveBayesTrainer
+Summary. train accuracy mean = 1.0 stddev = 0.0 stderr = 0.0
+Summary. test accuracy mean = 1.0 stddev = 0.0 stderr = 0.0

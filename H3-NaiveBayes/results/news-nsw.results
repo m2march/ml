@@ -1,0 +1,145 @@
+mallet-2.0.7/class:mallet-2.0.7/lib/mallet-deps.jar:
+
+-------------------- Trial 0  --------------------
+
+Trial 0 Training NaiveBayesTrainer with 1080 instances
+Trial 0 Training NaiveBayesTrainer finished
+Trial 0 Trainer NaiveBayesTrainer training data accuracy= 0.9990740740740741
+Trial 0 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=0.9916666666666667
+       label   0   1   2  |total
+  0     comp  41   .   1  |42
+  1 politics   .  43   .  |43
+  2      rec   .   .  35  |35
+
+Trial 0 Trainer NaiveBayesTrainer test data accuracy= 0.9916666666666667
+
+-------------------- Trial 1  --------------------
+
+Trial 1 Training NaiveBayesTrainer with 1080 instances
+Trial 1 Training NaiveBayesTrainer finished
+Trial 1 Trainer NaiveBayesTrainer training data accuracy= 0.9990740740740741
+Trial 1 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=0.9916666666666667
+       label   0   1   2  |total
+  0     comp  47   .   .  |47
+  1 politics   .  37   .  |37
+  2      rec   .   1  35  |36
+
+Trial 1 Trainer NaiveBayesTrainer test data accuracy= 0.9916666666666667
+
+-------------------- Trial 2  --------------------
+
+Trial 2 Training NaiveBayesTrainer with 1080 instances
+Trial 2 Training NaiveBayesTrainer finished
+Trial 2 Trainer NaiveBayesTrainer training data accuracy= 0.9990740740740741
+Trial 2 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=1.0
+       label   0   1   2  |total
+  0     comp  54   .   .  |54
+  1 politics   .  24   .  |24
+  2      rec   .   .  42  |42
+
+Trial 2 Trainer NaiveBayesTrainer test data accuracy= 1.0
+
+-------------------- Trial 3  --------------------
+
+Trial 3 Training NaiveBayesTrainer with 1080 instances
+Trial 3 Training NaiveBayesTrainer finished
+Trial 3 Trainer NaiveBayesTrainer training data accuracy= 0.9990740740740741
+Trial 3 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=0.9916666666666667
+       label   0   1   2  |total
+  0     comp  52   .   .  |52
+  1 politics   .  31   .  |31
+  2      rec   1   .  36  |37
+
+Trial 3 Trainer NaiveBayesTrainer test data accuracy= 0.9916666666666667
+
+-------------------- Trial 4  --------------------
+
+Trial 4 Training NaiveBayesTrainer with 1080 instances
+Trial 4 Training NaiveBayesTrainer finished
+Trial 4 Trainer NaiveBayesTrainer training data accuracy= 0.9990740740740741
+Trial 4 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=0.9916666666666667
+       label   0   1   2  |total
+  0     comp  56   .   .  |56
+  1 politics   .  20   .  |20
+  2      rec   1   .  43  |44
+
+Trial 4 Trainer NaiveBayesTrainer test data accuracy= 0.9916666666666667
+
+-------------------- Trial 5  --------------------
+
+Trial 5 Training NaiveBayesTrainer with 1080 instances
+Trial 5 Training NaiveBayesTrainer finished
+Trial 5 Trainer NaiveBayesTrainer training data accuracy= 1.0
+Trial 5 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=0.9833333333333333
+       label   0   1   2  |total
+  0     comp  46   .   .  |46
+  1 politics   .  25   1  |26
+  2      rec   1   .  47  |48
+
+Trial 5 Trainer NaiveBayesTrainer test data accuracy= 0.9833333333333333
+
+-------------------- Trial 6  --------------------
+
+Trial 6 Training NaiveBayesTrainer with 1080 instances
+Trial 6 Training NaiveBayesTrainer finished
+Trial 6 Trainer NaiveBayesTrainer training data accuracy= 1.0
+Trial 6 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=0.9916666666666667
+       label   0   1   2  |total
+  0     comp  48   1   .  |49
+  1 politics   .  28   .  |28
+  2      rec   .   .  43  |43
+
+Trial 6 Trainer NaiveBayesTrainer test data accuracy= 0.9916666666666667
+
+-------------------- Trial 7  --------------------
+
+Trial 7 Training NaiveBayesTrainer with 1080 instances
+Trial 7 Training NaiveBayesTrainer finished
+Trial 7 Trainer NaiveBayesTrainer training data accuracy= 1.0
+Trial 7 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=0.975
+       label   0   1   2  |total
+  0     comp  55   .   3  |58
+  1 politics   .  31   .  |31
+  2      rec   .   .  31  |31
+
+Trial 7 Trainer NaiveBayesTrainer test data accuracy= 0.975
+
+-------------------- Trial 8  --------------------
+
+Trial 8 Training NaiveBayesTrainer with 1080 instances
+Trial 8 Training NaiveBayesTrainer finished
+Trial 8 Trainer NaiveBayesTrainer training data accuracy= 1.0
+Trial 8 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=0.9833333333333333
+       label   0   1   2  |total
+  0     comp  44   .   1  |45
+  1 politics   .  29   .  |29
+  2      rec   1   .  45  |46
+
+Trial 8 Trainer NaiveBayesTrainer test data accuracy= 0.9833333333333333
+
+-------------------- Trial 9  --------------------
+
+Trial 9 Training NaiveBayesTrainer with 1080 instances
+Trial 9 Training NaiveBayesTrainer finished
+Trial 9 Trainer NaiveBayesTrainer training data accuracy= 1.0
+Trial 9 Trainer NaiveBayesTrainer Test Data Confusion Matrix
+Confusion Matrix, row=true, column=predicted  accuracy=0.9916666666666667
+       label   0   1   2  |total
+  0     comp  50   .   1  |51
+  1 politics   .  31   .  |31
+  2      rec   .   .  38  |38
+
+Trial 9 Trainer NaiveBayesTrainer test data accuracy= 0.9916666666666667
+
+NaiveBayesTrainer
+Summary. train accuracy mean = 0.999537037037037 stddev = 4.6296296296294276E-4 stderr = 1.4640174352630747E-4
+Summary. test accuracy mean = 0.9891666666666665 stddev = 0.0065085413965889 stderr = 0.002058181505871418
