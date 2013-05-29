@@ -1,15 +1,19 @@
 .PHONY: web
 MALLET_DIR = mallet-2.0.7
 DATASETS = datasets
-RESULTS = results
+RESULTS_DIR = results
 MALLET = ${MALLET_DIR}/bin/mallet
 MALLETPP = --cross-validation 10
 STOPLIST_FILE = stopwords/de-en.txt
-TARGETS = ${RESULTS}/web.results ${RESULTS}/web-nsw.results ${RESULTS}/news.results ${RESULTS}/news-nsw.results
+SUMMARIES = ${RESULTS_DIR}/web.summary ${RESULTS_DIR}/web-nsw.summary ${RESULTS_DIR}/news.summary ${RESULTS_DIR}/news-nsw.summary
+PARSER = ruby trainingParser.rb
 
-all: ${TARGETS}
+all: ${SUMMARIES}
 
-${RESULTS}/%.results: ${DATASETS}/%.mallet
+${RESULTS_DIR}/%.summary: ${RESULTS_DIR}/%.results
+	${PARSER} $^ > $@
+
+${RESULTS_DIR}/%.results: ${DATASETS}/%.mallet
 	${MALLET} train-classifier --input $< ${MALLETPP} > $@
 
 ${DATASETS}/%-nsw.mallet: 
@@ -21,4 +25,5 @@ ${DATASETS}/%.mallet:
 
 clean:
 	rm -f ${DATASETS}/*.mallet
-	rm -f ${RESULTS}/*.results
+	rm -f ${RESULTS_DIR}/*.results
+	rm -f ${RESULTS_DIR}/*.summary
