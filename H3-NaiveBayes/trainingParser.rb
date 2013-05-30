@@ -2,17 +2,17 @@ TABLE_TEMPLATE = "doc/extras/%s.tex"
 SUMMARY_TEMPLATE = "doc/extras/%s.summary"
 
 class Training
-	attr_accessor :trial, :instances, :status, :training_acc, :test_acc
+	attr_accessor :trial, :instances, :status, :training_acc, :testing_acc
   def initialize(trial, lines)
     self.trial = trial
     self.instances =  (/NaiveBayesTrainer with ([\d\.]+)/.match(lines[0])[1]).to_f
     self.status = /.*NaiveBayesTrainer (\w+)/.match(lines[1])[1]
     self.training_acc = (/.*accuracy= ([\d\.]+)/.match(lines[2])[1]).to_f
-    self.test_acc = (/.*accuracy= ([\d\.]+)/.match(lines[4])[1]).to_f
+    self.testing_acc = (/.*accuracy= ([\d\.]+)/.match(lines[4])[1]).to_f
   end
   
   def to_tableLine
-    "%s & %d & %f & %f \\\\" % [self.trial, self.instances, self.training_acc, self.test_acc]
+    "%s & %d & %f & %f \\\\" % [self.trial, self.instances, self.training_acc, self.testing_acc]
   end
 end
 
@@ -36,5 +36,10 @@ tableFile.close
 
 #Writing Summary
 summaryFile = File.new(SUMMARY_TEMPLATE % trialName, "w")
-summaryFile.puts "Summary results for %s" % trialName
+summaryFile.puts "  Summary results for *%s*" % trialName
+summaryFile.puts "-------------------------------"
+summaryFile.puts "Max training accuracy: %f" % trainingTrials.max { |t| t.training_acc }.training_acc
+summaryFile.puts "Max testing accuracy:  %f" % trainingTrials.max { |t| t.testing_acc }.testing_acc
+summaryFile.puts "Avg training accuracy: %f" % (trainingTrials.inject(0.0){ |r, t| t.testing_acc + r} / trainingTrials.size)
+summaryFile.puts "Avg testing accuracy:  %f" % (trainingTrials.inject(0.0){ |r, t| t.testing_acc + r} / trainingTrials.size)
 summaryFile.close
