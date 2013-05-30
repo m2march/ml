@@ -4,7 +4,6 @@
 \usepackage{caratula}
 
 \usepackage{amsmath}
-\usepackage{amsthm}
 \usepackage[pdftex]{graphicx}
 \usepackage{makeidx}
 \usepackage{hyperref}
@@ -26,7 +25,31 @@
 \tableofcontents
 \newpage
 
-\section{Reglas de Bayes}
+\section{Introducción}
+
+En el presente trabajo se estudia la técnica de aprendizaje automático mediante el uso de probabilidades utilizando el \emph{teorema de bayes de probabilidad condicional}. El estudio consiste en la comprensión de la técnica y el análisis de resultados práticos de su utilización. 
+
+\section{Naive Bayes}
+
+\subsection{Objectivo}
+
+En este trabajo se vuelve a trabajar sobre el problema de un clasificador. Un clasificador se define como una función $c : \mathbf{X} \rightarrow \mathbf{V}$, donde $\mathbf{X}$ es el conjunto de instancias y $\mathbf{V}$ el de clasificaciones. La técnica intenta encontrar la clasificación más probable de una instancia $x = (a_1, a_2, \dots, a_n) \in \mathbf{X}$ dado los datos $\mathbf{D}$. $\mathbf{D}$ conforma \emph{casos de entrenamiento}, donde $\langle x_i, d_i \rangle \in \mathbf{D}$ y $d_i \in \mathbf{V}$.
+
+Esta clasificación más probable puede caracterizarse como: 
+
+$$ v_{\text{\emph{map}}} = \underset{v_i \in \mathbf{V}}{\text{argmax}}\  P(v_i | x) $$
+
+donde el nombre \emph{map} de $v$ refiere a que es el valor con la máxima probabilidad a posteriori (\emph{maximum a posteriori}) de ser el que buscamos. Es a la hora de calcular $P(v_i | x)$ que utilizamos el teorema de bayes.
+
+\subsection{Teorema de bayes}
+
+El teorema de bayes de probabilidad condicional anuncia lo siguiente:
+
+$$ P(A | B) = \frac{P(A) \times P(A | B)}{P(B)} $$
+
+esto es, una forma de describir la probabilidad condicional de $A$ según $B$ a partir de la probabilidad condicional inversa y las probabilidades a priori de cada una de las partes. La utilidad de este teorema es que nos permite reescribir la ecuación anterior a elementos que nos resultarán más fáciles de calcular. El método hace uso también de la \emph{regla de la cadena de probabilidad}, que establece que:
+
+$$ P(A_n \cap A_{n-1} \cap \cdots \land A_1) = P(A_n | A_{n-1} \cap \cdots \cap A_1) $$
 
 \section{Resultados}
 
