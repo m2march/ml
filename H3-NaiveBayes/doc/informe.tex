@@ -1,15 +1,20 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
-%\usepackage{caratula}
+\usepackage{caratula}
 
 \usepackage{amsmath}
 \usepackage[pdftex]{graphicx}
 \usepackage{makeidx}
 \usepackage{hyperref}
 \usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
 \usepackage{color}
 \usepackage{verbatim}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multicol}
 
 \usepackage[top=3cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 
@@ -65,10 +70,65 @@ Para este \emph{dataset} se definen dos categorías representando los posibles l
 
 A continuación presentamos los datos detallados de cada uno de los clasificadores entrenados, así como un resumen de estos datos.
 
+\begin{multicols}{2}
+\begin{figure}[H]
+    \centering
+    \input{extras/web.tex}
+    \caption{Resultados de entrenamiento detallados para el dataset \textsf{web}}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.35\textwidth}
+    \verbatiminput{extras/web.summary}
+    \end{minipage}
+    \caption{Resumen de los resultados de entrenamiento para el dataset \textsf{web}}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \input{extras/web-nsw.tex}
+    \caption{Resultados de enternamiento detallados para el dataset \textsf{web} habiendo eliminado \emph{stopwords}}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.35\textwidth}
+    \verbatiminput{extras/web-nsw.summary}
+    \end{minipage}
+    \caption{Resumen de los resultados de entrenamiento para el dataset \textsf{web} habiendo eliminado \emph{stopwords}}
+\end{figure}
+\end{multicols}
+   
+Podemos ver que para esta tarea, con estos juegos de datos, el clasificador es comportó de forma perfecta en todos los casos.
+
 \subsection{\textsf{News} dataset}
 
+\begin{multicols}{2}
+\begin{figure}[H]
+    \centering
+    \input{extras/news.tex}
+    \caption{Resultados de entrenamiento detallados para el dataset \textsf{news}}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.35\textwidth}
+    \verbatiminput{extras/news.summary}
+    \end{minipage}
+    \caption{Resumen de los resultados de entrenamiento para el dataset \textsf{news}}
+\end{figure}
 
-
+\begin{figure}[H]
+    \centering
+    \input{extras/news-nsw.tex}
+    \caption{Resultados de entrenamiento detallados para el dataset \textsf{news} habiendo eliminado \emph{stopwords}}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.35\textwidth}
+    \verbatiminput{extras/news-nsw.summary}
+    \end{minipage}
+    \caption{Resumen de los resultados de entrenamiento para el dataset \textsf{news} habiendo eliminado \emph{stopwords}}
+\end{figure}
+\end{multicols}
 
 \end{document}
 

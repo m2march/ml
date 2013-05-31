@@ -8,8 +8,14 @@ MALLETPP = --cross-validation 10
 STOPLIST_FILE = stopwords/de-en.txt
 SUMMARIES = ${RESULTS_DIR}/web.summary ${RESULTS_DIR}/web-nsw.summary ${RESULTS_DIR}/news.summary ${RESULTS_DIR}/news-nsw.summary
 PARSER = ruby trainingParser.rb
+DOC_DIR = doc
+INFORME = doc/informe.pdf
+INFORME_DEPS = ${SUMMARIES}
 
-all: ${SUMMARIES}
+all: ${SUMMARIES} ${INFORME}
+
+${INFORME}: ${SUMMARIES} 
+	make -C ${DOC_DIR}
 
 ${RESULTS_DIR}/%.summary: ${RESULTS_DIR}/%.results ${DEPS}
 	${PARSER} $< > $@
@@ -24,4 +30,5 @@ ${DATASETS}/%.mallet:
 	${MALLET} import-dir --input ${DATASETS}/$*/* --output $@ 
 
 clean:
-	rm ${SUMMARIES}
+	rm -f ${SUMMARIES}
+	make -C ${DOC_DIR} clean

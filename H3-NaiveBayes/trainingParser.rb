@@ -24,22 +24,21 @@ trainingTrials = ARGF.group_by { |l| x = /^Trial (\d)/.match(l); x.nil? ? x : x[
 
 #Writing table
 tableFile = File.new(TABLE_TEMPLATE % trialName, "w")
-tableFile.puts "\\begin{table}"
-tableFile.puts "\\begin{tabular}[ c | c | c | c ]"
-tableFile.puts "Trial & Training Instances & Training Accuracy & Test Accuracy \\\\"
+tableFile.puts "{\\footnotesize"
+tableFile.puts "\\begin{tabular}{ c | c | c | c }"
+tableFile.puts "Trial & Instances & Training Accuracy & Test Accuracy \\\\"
 tableFile.puts "\\hline"
 trainingTrials.each { |e| tableFile.puts(e.to_tableLine) }
 tableFile.puts "\\end{tabular}"
-tableFile.puts "\\caption{%s}" % trialName
-tableFile.puts "\\end{table}"
+tableFile.puts "}"
 tableFile.close
 
 #Writing Summary
 summaryFile = File.new(SUMMARY_TEMPLATE % trialName, "w")
 summaryFile.puts "  Summary results for *%s*" % trialName
 summaryFile.puts "-------------------------------"
-summaryFile.puts "Max training accuracy: %f" % trainingTrials.max { |t| t.training_acc }.training_acc
-summaryFile.puts "Max testing accuracy:  %f" % trainingTrials.max { |t| t.testing_acc }.testing_acc
+summaryFile.puts "Max training accuracy: %f" % trainingTrials.max_by { |t| t.training_acc }.training_acc
+summaryFile.puts "Max testing accuracy:  %f" % trainingTrials.max_by { |t| t.testing_acc }.testing_acc
 summaryFile.puts "Avg training accuracy: %f" % (trainingTrials.inject(0.0){ |r, t| t.testing_acc + r} / trainingTrials.size)
 summaryFile.puts "Avg testing accuracy:  %f" % (trainingTrials.inject(0.0){ |r, t| t.testing_acc + r} / trainingTrials.size)
 summaryFile.close
