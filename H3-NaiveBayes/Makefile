@@ -1,4 +1,5 @@
-.PHONY: web
+.SECONDARY:
+DEPS = trainingParser.rb
 MALLET_DIR = mallet-2.0.7
 DATASETS = datasets
 RESULTS_DIR = results
@@ -10,8 +11,8 @@ PARSER = ruby trainingParser.rb
 
 all: ${SUMMARIES}
 
-${RESULTS_DIR}/%.summary: ${RESULTS_DIR}/%.results
-	${PARSER} $^ > $@
+${RESULTS_DIR}/%.summary: ${RESULTS_DIR}/%.results ${DEPS}
+	${PARSER} $< > $@
 
 ${RESULTS_DIR}/%.results: ${DATASETS}/%.mallet
 	${MALLET} train-classifier --input $< ${MALLETPP} > $@
@@ -22,8 +23,5 @@ ${DATASETS}/%-nsw.mallet:
 ${DATASETS}/%.mallet: 
 	${MALLET} import-dir --input ${DATASETS}/$*/* --output $@ 
 
-
 clean:
-	rm -f ${DATASETS}/*.mallet
-	rm -f ${RESULTS_DIR}/*.results
-	rm -f ${RESULTS_DIR}/*.summary
+	rm ${SUMMARIES}

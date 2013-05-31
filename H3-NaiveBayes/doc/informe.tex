@@ -1,0 +1,74 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage{caratula}
+
+\usepackage{amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage{makeidx}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{color}
+\usepackage{verbatim}
+
+\usepackage[top=3cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+
+\begin{document}
+
+\materia{Aprendizaje Automático}
+
+\titulo{Homework 3 : Naive Bayes}
+
+\integrante{Martin Miguel}{181/09}{m2.march@gmail.com}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introducción}
+
+En el presente trabajo se estudia una técnica de aprendizaje automático que hace uso de probabilidades para lograr el aprendizaje. Esta familia de técnicas se basa en la utilización del \emph{teorema de probabilidad condicional} de bayes. El estudio a realizar consiste en la comprensión de la técnica y el análisis de sus capacidades.
+
+\section{Naive Bayes Classifier}
+
+\subsection{Objectivo}
+
+En este trabajo se vuelve a trabajar sobre el problema de un clasificador. Un clasificador se define como una función $c : \mathbf{X} \rightarrow \mathbf{V}$, donde $\mathbf{X}$ es el conjunto de instancias y $\mathbf{V}$ el de clasificaciones. La técnica intenta encontrar la clasificación más probable de una instancia $x = (a_1, a_2, \dots, a_n) \in \mathbf{X}$ dado los \emph{casos de entrenamiento} $\mathbf{D}$. Cada caso es de la forma $\langle x_i, d_i \rangle \in \mathbf{D}$ y $d_i \in \mathbf{V}$.
+
+El clasificador a entrenar dará lugar a una aproximación de $c$ que llamaremos $c'$. Podemos caracterizar a $c'$ como: 
+
+$$ c'(x) = v_{\text{\emph{map}}} = \underset{v_i \in \mathbf{V}}{\text{argmax}}\  P(v_i | x) $$
+
+donde el nombre \emph{map} de $v$ refiere a que es el valor con la máxima probabilidad a posteriori (\emph{maximum a posteriori}) de ser el que buscamos. Es a la hora de calcular $P(v_i | x)$ que utilizamos el teorema de bayes.
+
+\subsection{Teorema de bayes}
+
+El teorema de bayes de probabilidad condicional anuncia lo siguiente:
+
+$$ P(A | B) = \frac{P(A) \times P(A | B)}{P(B)} $$
+
+esto es, una forma de describir la probabilidad condicional de $A$ según $B$ a partir de la probabilidad condicional inversa y las probabilidades a priori de cada una de las partes. La utilidad de este teorema es que nos permite reescribir la ecuación anterior a elementos que nos resultarán más fáciles de calcular. El método hace uso también de la \emph{regla de la cadena de probabilidad}, que establece que:
+
+$$ P(A_n \cap A_{n-1} \cap \cdots \land A_1) = P(A_n | A_{n-1} \cap \cdots \cap A_1) $$
+
+\section{Resultados}
+
+En este trabajo se examinó la performance de la técnica sobre dos juegos de datos: \textsf{web} y \textsf{news}. Sobre ambos juegos de datos la tarea fue clasificar un conjunto de textos bajo ciertas categorías. En el primero es el idioma del texto y en el segundo su temática. 
+
+La evaluación de performance consistió en entrenar un clasificador usando una porción de los datos y luego evaluar que tan bien logra clasificar el resto de los casos. En particular se utilizó la técnica de \emph{cross-validations} que permite estimar mejor las capacidades de la técnica de aprendizaje automático para predecir la función de clasificación. La técnica consiste en particionar los casos de entrenamiento en $n$ partes y, para cada una de ellas, entrenar el clasificador con los datos que no pertenecen a la parte y luego evaluarlo con esta. Se utilizó $n = 10$.
+
+Otro detalle que se tuvo en cuenta fue la posibilidad de eliminar de los textos la denominadas \emph{stopwords}. Las \emph{stopwords} son adverbios, conectores y preposiciones de usomuy frecuente en el lenguaje. Para ambos datasets también se entrenaron clasificadores eliminando \emph{stopwords}, de forma de evaluar si bajo esas circunstancias obtenemos clasificadores más precisos.
+
+\subsection{\textsf{Web} dataset}
+
+Para este \emph{dataset} se definen dos categorías representando los posibles lenguajes del texto. Estos lenguajes son \emph{inglés} y \emph{alemán}.
+
+A continuación presentamos los datos detallados de cada uno de los clasificadores entrenados, así como un resumen de estos datos.
+
+\subsection{\textsf{News} dataset}
+
+
+
+
+\end{document}
+

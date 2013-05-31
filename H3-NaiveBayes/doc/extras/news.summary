@@ -1,0 +1,6 @@
+  Summary results for *news*
+-------------------------------
+Max training accuracy: 0.999074
+Max testing accuracy:  0.975000
+Avg training accuracy: 0.981667
+Avg testing accuracy:  0.981667
