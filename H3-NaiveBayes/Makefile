@@ -1,21 +1,18 @@
 .SECONDARY:
-DEPS = trainingParser.rb
+DEPS = tools/trainingParser.rb
 MALLET_DIR = mallet-2.0.7
 DATASETS = datasets
 RESULTS_DIR = results
 MALLET = ${MALLET_DIR}/bin/mallet
 MALLETPP = --cross-validation 10
 STOPLIST_FILE = stopwords/de-en.txt
-SUMMARIES = ${RESULTS_DIR}/web.summary ${RESULTS_DIR}/web-nsw.summary ${RESULTS_DIR}/news.summary ${RESULTS_DIR}/news-nsw.summary
-PARSER = ruby trainingParser.rb
+SUMMARIES = ${RESULTS_DIR}/web.summary ${RESULTS_DIR}/web-nsw.summary ${RESULTS_DIR}/news.summary ${RESULTS_DIR}/news-nsw.summary ${RESULTS_DIR}/news-nng.summary
+PARSER = ruby tools/trainingParser.rb
 DOC_DIR = doc
 INFORME = doc/informe.pdf
 INFORME_DEPS = ${SUMMARIES}
 
 all: ${SUMMARIES} ${INFORME}
-
-${INFORME}: ${SUMMARIES} 
-	make -C ${DOC_DIR}
 
 ${RESULTS_DIR}/%.summary: ${RESULTS_DIR}/%.results ${DEPS}
 	${PARSER} $< > $@
@@ -28,6 +25,9 @@ ${DATASETS}/%-nsw.mallet:
 
 ${DATASETS}/%.mallet: 
 	${MALLET} import-dir --input ${DATASETS}/$*/* --output $@ 
+
+${INFORME}: ${SUMMARIES} 
+	make -C ${DOC_DIR}
 
 clean:
 	rm -f ${SUMMARIES}

@@ -4,6 +4,7 @@
 \usepackage{caratula}
 
 \usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage[pdftex]{graphicx}
 \usepackage{makeidx}
 \usepackage{hyperref}
@@ -15,6 +16,7 @@
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{multicol}
+\usepackage{wrapfig}
 
 \usepackage[top=3cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 
@@ -32,62 +34,90 @@
 
 \section{Introducción}
 
-En el presente trabajo se estudia una técnica de aprendizaje automático que hace uso de probabilidades para lograr el aprendizaje. Esta familia de técnicas se basa en la utilización del \emph{teorema de probabilidad condicional} de bayes. El estudio a realizar consiste en la comprensión de la técnica y el análisis de sus capacidades.
+En el presente trabajo se estudia una técnica de aprendizaje automático que hace uso de probabilidades. Esta familia de técnicas se basa en el \emph{teorema de probabilidad condicional} de bayes. El estudio a realizar consiste en la comprensión de la técnica y el análisis de sus capacidades.
 
 \section{Naive Bayes Classifier}
 
-\subsection{Objectivo}
+\subsection{Objetivo}
 
-En este trabajo se vuelve a trabajar sobre el problema de un clasificador. Un clasificador se define como una función $c : \mathbf{X} \rightarrow \mathbf{V}$, donde $\mathbf{X}$ es el conjunto de instancias y $\mathbf{V}$ el de clasificaciones. La técnica intenta encontrar la clasificación más probable de una instancia $x = (a_1, a_2, \dots, a_n) \in \mathbf{X}$ dado los \emph{casos de entrenamiento} $\mathbf{D}$. Cada caso es de la forma $\langle x_i, d_i \rangle \in \mathbf{D}$ y $d_i \in \mathbf{V}$.
+En este trabajo se vuelve a abordar el problema de estimar un clasificador. Un clasificador se define como una función $c : \mathbb{X} \rightarrow \mathbb{V}$, donde $\mathbb{X}$ es el conjunto de instancias y $\mathbb{V}$ el de clasificaciones. La técnica intenta encontrar la clasificación más probable de una instancia $x = (a_1, a_2, \dots, a_n) \in \mathbb{X}$ dado los \emph{casos de entrenamiento} $\mathbb{D}$. Cada caso es de la forma $\langle x_i, d_i \rangle \in \mathbb{D}$ y $d_i \in \mathbb{V}$. $a_1, \dots a_n$ son los valores que toma cada atributo para la instancia $x$.
 
 El clasificador a entrenar dará lugar a una aproximación de $c$ que llamaremos $c'$. Podemos caracterizar a $c'$ como: 
 
-$$ c'(x) = v_{\text{\emph{map}}} = \underset{v_i \in \mathbf{V}}{\text{argmax}}\  P(v_i | x) $$
+\begin{equation}\label{eq_vmap}
+c'(x) = v_{\text{\emph{map}}} = \underset{v_i \in \mathbb{V}}{\text{argmax}}\  P(v_i | x) 
+\end{equation}
 
-donde el nombre \emph{map} de $v$ refiere a que es el valor con la máxima probabilidad a posteriori (\emph{maximum a posteriori}) de ser el que buscamos. Es a la hora de calcular $P(v_i | x)$ que utilizamos el teorema de bayes.
+donde el nombre \emph{map} de $v$ refiere a que es el valor con la máxima probabilidad a posteriori (\emph{maximum a posteriori} probability) de ser el que buscamos. Es a la hora de calcular $P(v_i | x)$ que utilizamos el teorema de bayes.
 
 \subsection{Teorema de bayes}
 
 El teorema de bayes de probabilidad condicional anuncia lo siguiente:
 
-$$ P(A | B) = \frac{P(A) \times P(A | B)}{P(B)} $$
+\begin{equation}\label{eq_bayes}
+P(A | B) = \frac{P(A \cap B)}{P(B)}
+\end{equation}
 
-esto es, una forma de describir la probabilidad condicional de $A$ según $B$ a partir de la probabilidad condicional inversa y las probabilidades a priori de cada una de las partes. La utilidad de este teorema es que nos permite reescribir la ecuación anterior a elementos que nos resultarán más fáciles de calcular. El método hace uso también de la \emph{regla de la cadena de probabilidad}, que establece que:
+esto es, una forma de describir la probabilidad condicional de $A$ según $B$ a partir de la probabilidad condicional inversa. La utilidad de este teorema es que nos permite reescribir la ecuación anterior a elementos que nos resultarán más fáciles de calcular. El método hace uso también de la \emph{regla de la cadena de probabilidad}, derivable a partir de (\ref{eq_bayes}). La misma establece que:
 
-$$ P(A_n \cap A_{n-1} \cap \cdots \land A_1) = P(A_n | A_{n-1} \cap \cdots \cap A_1) $$
+\begin{equation}\label{eq_chain}
+P(A_n \cap A_{n-1} \cap \cdots \cap A_1) = P(A_n | A_{n-1} \cap \cdots \cap A_1) \  P(A_{n-1} \dots A_1)
+\end{equation}
+
+Luego utilizamos ambas reglas para realizar las siguientes derivaciones, con el objetivo de acercarnos a probabilidades más fáciles de calcular a partir de $\mathbb{D}$.
+
+\begin{align}
+P(v_i | x) &= P(v_i | x_1 \cap x_2 \cap \dots \cap x_n) \\
+ &= \frac{P(x_1 \cap x_2 \cap \dots x_n \cap v_i)}{P(x)} \\
+ &= \frac{P(x_1 | x_2 \cap \dots \cap x_n \cap v_i) \times P(x_2 \cap \dots \cap x_n \cap v_i) }{P(x)}  \\
+  &\hspace{0.2\textwidth} {} \vdots \\
+ &= \frac{\prod^{n}_{k=1} P(x_k | x_{k+1} \cap \dots \cap x_n \cap v_i) \times P(v_i) }{P(x)} 
+\end{align}
+
+El último paso a dar es la hipótesis simplificatoria que se utiliza en la técnica \textbf{naive bayes}. La misma es que los atributos de las instancias son \emph{condicionalmente independientes}\footnote{http://en.wikipedia.org/wiki/Conditional\_independence} respecto de la categoría de la misma. Esto es $P(x_a | x_b \cap v_i) = P(x_a | v_i)$. Con esto último tenemos una nueva y simplificada versión de $c'$:
+
+\begin{equation}
+  c'(x) = v_{\text{\emph{map}}} = \underset{v_i \in \mathbb{V}}{\text{argmax}}\ \prod^{n}_{k=1} P(x_k | v_i) \times P(v_i)
+\end{equation}
+
+Los valores de $P(x_k | v_i)$ y $P(v_i)$ son fácilmente estimables desde los \emph{casos de entrenamiento} $\mathbb{D}$.
 
 \section{Resultados}
 
-En este trabajo se examinó la performance de la técnica sobre dos juegos de datos: \textsf{web} y \textsf{news}. Sobre ambos juegos de datos la tarea fue clasificar un conjunto de textos bajo ciertas categorías. En el primero es el idioma del texto y en el segundo su temática. 
+En el trabajo aplicaremos la técnica \textbf{naive bayes} para la categorización de textos. Para ello es necesario adaptar las nuevas instancias (los textos) al mecanismo de evaluación que utilizamos. En este contexto, definimos a las instancias $x = (x_1, \dots, x_w($ donde cada $x_i$ es un atributo binario sobre la presencia de la i-ésima palabra en el texto. Para conocer la i-ésima palabra se toma el conjunto de todas las palabras presentes en todos los textos (en todo $\mathbb{D}$).\footnote{\emph{Machine Learning} by Tom Michell - Ch. 6 - P. 180}
+
+Se examinó la performance de la técnica sobre dos juegos de datos: \textsf{web} y \textsf{news}. Sobre ambos la tarea fue clasificar un conjunto de textos bajo ciertas categorías. En el primero la categoría es el idioma del texto y en el segundo su temática. 
 
 La evaluación de performance consistió en entrenar un clasificador usando una porción de los datos y luego evaluar que tan bien logra clasificar el resto de los casos. En particular se utilizó la técnica de \emph{cross-validations} que permite estimar mejor las capacidades de la técnica de aprendizaje automático para predecir la función de clasificación. La técnica consiste en particionar los casos de entrenamiento en $n$ partes y, para cada una de ellas, entrenar el clasificador con los datos que no pertenecen a la parte y luego evaluarlo con esta. Se utilizó $n = 10$.
 
-Otro detalle que se tuvo en cuenta fue la posibilidad de eliminar de los textos la denominadas \emph{stopwords}. Las \emph{stopwords} son adverbios, conectores y preposiciones de usomuy frecuente en el lenguaje. Para ambos datasets también se entrenaron clasificadores eliminando \emph{stopwords}, de forma de evaluar si bajo esas circunstancias obtenemos clasificadores más precisos.
+Otro detalle que se tuvo en cuenta fue la posibilidad de eliminar de los textos la denominadas \emph{stopwords}. Los \emph{stopwords} son adverbios, conectores y preposiciones de uso muy frecuente en el lenguaje. Para ambos datasets también se entrenaron clasificadores eliminando \emph{stopwords}, de forma de evaluar si bajo esas circunstancias obtenemos clasificadores más precisos.
 
 \subsection{\textsf{Web} dataset}
 
 Para este \emph{dataset} se definen dos categorías representando los posibles lenguajes del texto. Estos lenguajes son \emph{inglés} y \emph{alemán}.
 
-A continuación presentamos los datos detallados de cada uno de los clasificadores entrenados, así como un resumen de estos datos.
+A continuación presentamos el resumen de los clasificadores entrenados.
+
+%\begin{multicols}{2}
+%\begin{figure}[H]
+%    \centering
+%    \input{extras/web.tex}
+%    \caption{Resultados de entrenamiento detallados para el dataset \textsf{web}}
+%\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \input{extras/web-nsw.tex}
+%    \caption{Resultados de enternamiento detallados para el dataset \textsf{web} habiendo eliminado \emph{stopwords}}
+%\end{figure}
+%\end{figure}
 
 \begin{multicols}{2}
-\begin{figure}[H]
-    \centering
-    \input{extras/web.tex}
-    \caption{Resultados de entrenamiento detallados para el dataset \textsf{web}}
-\end{figure}
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.35\textwidth}
     \verbatiminput{extras/web.summary}
     \end{minipage}
     \caption{Resumen de los resultados de entrenamiento para el dataset \textsf{web}}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \input{extras/web-nsw.tex}
-    \caption{Resultados de enternamiento detallados para el dataset \textsf{web} habiendo eliminado \emph{stopwords}}
 \end{figure}
 \begin{figure}[H]
     \centering
@@ -97,10 +127,24 @@ A continuación presentamos los datos detallados de cada uno de los clasificador
     \caption{Resumen de los resultados de entrenamiento para el dataset \textsf{web} habiendo eliminado \emph{stopwords}}
 \end{figure}
 \end{multicols}
+
+
+\begin{minipage}[c]{\textwidth}
+
+\begin{wrapfigure}{l}{0.3\textwidth}
+\centering
+\verbatiminput{extras/deAndEn.words}
+\caption{Palabras en común entre los textos en \emph{inglés} y en \emph{alemán} para el dataset \textsf{web}}
+\end{wrapfigure}
    
-Podemos ver que para esta tarea, con estos juegos de datos, el clasificador es comportó de forma perfecta en todos los casos.
+Podemos ver que para esta tarea, con estos juegos de datos, el clasificador es comportó de forma perfecta en todos los casos. Para comprender un poco mejor los resultados examinamos las palabras contenidas en los textos de cada idioma y su intersección. Observamos que solamente hay dos palabras en común, por lo que cualquier otra palabra que aparezca en el texto ya da buenos indicios sobre a que idioma pertenece.
+\end{minipage}
+
+\vspace{20pt}
 
 \subsection{\textsf{News} dataset}
+
+El dataset \textsf{news} se conforma de posts de distintos usuarios de un \emph{newsgroup}. Las instancias son luego preguntas, opiniones y respuestas de usuarios sobre distintas temáticas. El lenguaje es coloquial y cada instancia incluye metatexto como ser el mail del usuario, el newsgroup de la publicación, la fecha, etc. Los siguiente son los resultados de entrenar el clasificador para reconocer a qué temática corresponde cada texto. Las temáticas son \emph{computación}, \emph{recreación} y \emph{política}.
 
 \begin{multicols}{2}
 \begin{figure}[H]
@@ -128,6 +172,23 @@ Podemos ver que para esta tarea, con estos juegos de datos, el clasificador es c
     \end{minipage}
     \caption{Resumen de los resultados de entrenamiento para el dataset \textsf{news} habiendo eliminado \emph{stopwords}}
 \end{figure}
+\end{multicols}
+
+Observamos que los resultados son muy buenos, dado que los clasificadores lograron en promedio alrededor del 98\% de aciertos. Podemos ver que en algunos casos el entrenamiento logró resultados perfectos, y que estos casos aumentaron al eliminar los \emph{stopwords}. De hecho, bajo estas circunstancias hubo clasificadores que tuvieron precisión del 100\% para las instancias de testing. El comportamiento eliminando los \emph{stopwords} fue mejor bajo las tres medidas (\emph{max}, \emph{avg} y \emph{min}).
+
+Si examinamos un poco los textos en sí, vemos que todos poseen una línea de tipo \textsf{newsgroup} donde explicitan a qué sección de la web pertenecen, estándo estas súmamente relacionadas con las clasificaciones de nuestro conjunto $\mathbb{V}$. Para verificar la influencia de esta información, se creó un nuevo dataset denominado \textsf{news-nng} donde en cada texto se eliminó la línea declarando el newsgroup.
+
+\vspace{5pt}
+
+\begin{multicols}{2}
+
+\begin{figure}[H]
+\centering
+\verbatiminput{extras/news-nng.summary}
+\caption{Resumen de los resultados de entrenamiento para el dataset \textsf{news-nng}}
+\end{figure}
+
+Estos nuevos resultados muestran evidentemente la influencia de esos datos, ya que permitian separar trivialmente los textos según sus categorías. Si bien el comportamiendo de la técnica es todavía, las estadísticas son claramente inferiores que en el caso anterior.   
 \end{multicols}
 
 \end{document}

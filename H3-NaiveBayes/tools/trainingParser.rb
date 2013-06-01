@@ -41,4 +41,6 @@ summaryFile.puts "Max training accuracy: %f" % trainingTrials.max_by { |t| t.tra
 summaryFile.puts "Max testing accuracy:  %f" % trainingTrials.max_by { |t| t.testing_acc }.testing_acc
 summaryFile.puts "Avg training accuracy: %f" % (trainingTrials.inject(0.0){ |r, t| t.testing_acc + r} / trainingTrials.size)
 summaryFile.puts "Avg testing accuracy:  %f" % (trainingTrials.inject(0.0){ |r, t| t.testing_acc + r} / trainingTrials.size)
+summaryFile.puts "Min training accuracy: %f" % trainingTrials.min_by { |t| t.training_acc }.training_acc
+summaryFile.puts "Min testing accuracy:  %f" % trainingTrials.min_by { |t| t.testing_acc }.testing_acc
 summaryFile.close

@@ -1,0 +1,8 @@
+  Summary results for *news-nng*
+-------------------------------
+Max training accuracy: 0.432432
+Max testing accuracy:  0.462185
+Avg training accuracy: 0.345406
+Avg testing accuracy:  0.345406
+Min training accuracy: 0.322160
+Min testing accuracy:  0.235294

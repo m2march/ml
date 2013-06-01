@@ -2,5 +2,7 @@
 -------------------------------
 Max training accuracy: 1.000000
 Max testing accuracy:  1.000000
-Avg training accuracy: 0.989167
-Avg testing accuracy:  0.989167
+Avg training accuracy: 0.989104
+Avg testing accuracy:  0.989104
+Min training accuracy: 0.999069
+Min testing accuracy:  0.974790
