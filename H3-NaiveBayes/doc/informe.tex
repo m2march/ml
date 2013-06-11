@@ -55,10 +55,10 @@ donde el nombre \emph{map} de $v$ refiere a que es el valor con la máxima proba
 El teorema de bayes de probabilidad condicional anuncia lo siguiente:
 
 \begin{equation}\label{eq_bayes}
-P(A | B) = \frac{P(A \cap B)}{P(B)}
+P(A | B) = \frac{P(B | A) P(A)}{P(B)}
 \end{equation}
 
-esto es, una forma de describir la probabilidad condicional de $A$ según $B$ a partir de la probabilidad condicional inversa. La utilidad de este teorema es que nos permite reescribir la ecuación anterior a elementos que nos resultarán más fáciles de calcular. El método hace uso también de la \emph{regla de la cadena de probabilidad}, derivable a partir de (\ref{eq_bayes}). La misma establece que:
+esto es, una forma de describir la probabilidad condicional de $A$ según $B$ a partir de la probabilidad condicional inversa. La utilidad de este teorema es que nos permite reescribir la ecuación anterior a elementos que nos resultarán más fáciles de calcular. El método hace uso también de la \emph{regla de la cadena de probabilidad}, derivable a partir de la definición de \emph{probabilidad condicional}\footnote{http://en.wikipedia.org/wiki/Conditional\_probability}. La misma establece que:
 
 \begin{equation}\label{eq_chain}
 P(A_n \cap A_{n-1} \cap \cdots \cap A_1) = P(A_n | A_{n-1} \cap \cdots \cap A_1) \  P(A_{n-1} \dots A_1)
@@ -84,7 +84,7 @@ Los valores de $P(x_k | v_i)$ y $P(v_i)$ son fácilmente estimables desde los \e
 
 \section{Resultados}
 
-En el trabajo aplicaremos la técnica \textbf{naive bayes} para la categorización de textos. Para ello es necesario adaptar las nuevas instancias (los textos) al mecanismo de evaluación que utilizamos. En este contexto, definimos a las instancias $x = (x_1, \dots, x_w($ donde cada $x_i$ es un atributo binario sobre la presencia de la i-ésima palabra en el texto. Para conocer la i-ésima palabra se toma el conjunto de todas las palabras presentes en todos los textos (en todo $\mathbb{D}$).\footnote{\emph{Machine Learning} by Tom Michell - Ch. 6 - P. 180}
+En el trabajo aplicaremos la técnica \textbf{naive bayes} para la categorización de textos. Para ello es necesario adaptar las nuevas instancias (los textos) al mecanismo de evaluación que utilizamos. En este contexto, definimos a las instancias $x = (x_1, \dots, x_w)$ donde cada $x_i$ es un atributo binario sobre la presencia de la i-ésima palabra en el texto. Para conocer la i-ésima palabra se toma el conjunto de todas las palabras presentes en todos los textos (en todo $\mathbb{D}$).\footnote{\emph{Machine Learning} by Tom Michell - Ch. 6 - P. 180}
 
 Se examinó la performance de la técnica sobre dos juegos de datos: \textsf{web} y \textsf{news}. Sobre ambos la tarea fue clasificar un conjunto de textos bajo ciertas categorías. En el primero la categoría es el idioma del texto y en el segundo su temática. 
 
@@ -137,7 +137,7 @@ A continuación presentamos el resumen de los clasificadores entrenados.
 \caption{Palabras en común entre los textos en \emph{inglés} y en \emph{alemán} para el dataset \textsf{web}}
 \end{wrapfigure}
    
-Podemos ver que para esta tarea, con estos juegos de datos, el clasificador es comportó de forma perfecta en todos los casos. Para comprender un poco mejor los resultados examinamos las palabras contenidas en los textos de cada idioma y su intersección. Observamos que solamente hay dos palabras en común, por lo que cualquier otra palabra que aparezca en el texto ya da buenos indicios sobre a que idioma pertenece.
+Podemos ver que para esta tarea, con estos juegos de datos, el clasificador es comportó de forma perfecta en todos los casos. Para comprender un poco mejor los resultados examinamos las palabras contenidas en los textos de cada idioma y su intersección. Observamos que solamente hay dos palabras en común, por lo que cualquier otra palabra que aparezca en el texto ya da buenos indicios sobre a qué idioma pertenece.
 \end{minipage}
 
 \vspace{20pt}
@@ -176,7 +176,7 @@ El dataset \textsf{news} se conforma de posts de distintos usuarios de un \emph{
 
 Observamos que los resultados son muy buenos, dado que los clasificadores lograron en promedio alrededor del 98\% de aciertos. Podemos ver que en algunos casos el entrenamiento logró resultados perfectos, y que estos casos aumentaron al eliminar los \emph{stopwords}. De hecho, bajo estas circunstancias hubo clasificadores que tuvieron precisión del 100\% para las instancias de testing. El comportamiento eliminando los \emph{stopwords} fue mejor bajo las tres medidas (\emph{max}, \emph{avg} y \emph{min}).
 
-Si examinamos un poco los textos en sí, vemos que todos poseen una línea de tipo \textsf{newsgroup} donde explicitan a qué sección de la web pertenecen, estándo estas súmamente relacionadas con las clasificaciones de nuestro conjunto $\mathbb{V}$. Para verificar la influencia de esta información, se creó un nuevo dataset denominado \textsf{news-nng} donde en cada texto se eliminó la línea declarando el newsgroup.
+Si examinamos un poco los textos en sí, vemos que todos poseen una línea de tipo \textsf{newsgroup} donde explicitan a qué sección de la web pertenecen, estando estas súmamente relacionadas con las clasificaciones de nuestro conjunto $\mathbb{V}$. Para verificar la influencia de esta información, se creó un nuevo dataset denominado \textsf{news-nng} donde en cada texto se eliminó la línea declarando el newsgroup.
 
 \vspace{5pt}
 
@@ -188,7 +188,7 @@ Si examinamos un poco los textos en sí, vemos que todos poseen una línea de ti
 \caption{Resumen de los resultados de entrenamiento para el dataset \textsf{news-nng}}
 \end{figure}
 
-Estos nuevos resultados muestran evidentemente la influencia de esos datos, ya que permitian separar trivialmente los textos según sus categorías. Si bien el comportamiendo de la técnica es todavía, las estadísticas son claramente inferiores que en el caso anterior.   
+Estos nuevos resultados muestran evidentemente la influencia de estas líneas en los textos, ya que permitian separar trivialmente los textos según sus categorías. Vemos que las estadísticas son claramente inferiores comparando con el caso anterior.   
 \end{multicols}
 
 \end{document}
