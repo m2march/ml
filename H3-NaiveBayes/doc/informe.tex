@@ -80,7 +80,7 @@ El último paso a dar es la hipótesis simplificatoria que se utiliza en la téc
   c'(x) = v_{\text{\emph{map}}} = \underset{v_i \in \mathbb{V}}{\text{argmax}}\ \prod^{n}_{k=1} P(x_k | v_i) \times P(v_i)
 \end{equation}
 
-Los valores de $P(x_k | v_i)$ y $P(v_i)$ son fácilmente estimables desde los \emph{casos de entrenamiento} $\mathbb{D}$.
+Los valores de $P(x_k | v_i)$ y $P(v_i)$ son fácilmente estimables desde los \emph{casos de entrenamiento} $\mathbb{D}$. El valor $P(x)$ desaparece de la ecuación ya que no es relevante en el cálculo $\text{argmax}$.
 
 \section{Resultados}
 
@@ -189,7 +189,11 @@ Si examinamos un poco los textos en sí, vemos que todos poseen una línea de ti
 \end{figure}
 
 Estos nuevos resultados muestran evidentemente la influencia de estas líneas en los textos, ya que permitian separar trivialmente los textos según sus categorías. Vemos que las estadísticas son claramente inferiores comparando con el caso anterior.   
+
+\paragraph{}
+Podemos observar que los resultados del método de aprendizaje automático \textsf{Naive Bayes} son respetables incluso en tareas difíciles como clasificación de textos, pero muy sensibles al tipo y formato de los datos presentados. Es muy importante evaluar la confiabilidad de la técnica para cada tarea específica a resolver, antes de utilizarla.
 \end{multicols}
+
 
 \end{document}
 

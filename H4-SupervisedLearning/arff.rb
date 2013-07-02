@@ -35,7 +35,16 @@ module Arff
       s << ""
       s << "#{DATA_MARKER}"
       s.concat(@instances.collect{ |inst| inst.to_arff })
+      s << ""
       return s.join("\n") 
+    end
+
+    def clone
+      r = Relation.new
+      r.name = self.name
+      r.attributes = self.attributes
+      r.instances = self.instances.collect{ |i| i.clone } 
+      return r
     end
   end
 
@@ -67,7 +76,7 @@ module Arff
   class NominalAttribute < Attribute
     attr_accessor :values
     def to_arff
-      return super + " { #{self.values.join(" ")} }"
+      return super + " { #{self.values.join(", ")} }"
     end
   end
   
@@ -82,6 +91,12 @@ module Arff
     def to_arff
       return @attributes.collect{ |attr| attr.to_arff }.join(", ")
     end
+
+    def clone
+      i = Instance.new
+      self.attributes.each { |v| nv = v.clone; i.attributes << nv; i.class = nv if v == self.class; }
+      return i
+    end
   end
 
   class Value
@@ -90,6 +105,9 @@ module Arff
   class MissingValue < Value
     def to_arff
       return MISSING_VALUE
+    end
+    def clone
+      return self
     end
   end
 
@@ -102,6 +120,10 @@ module Arff
     
     def to_arff
       return @value.to_s
+    end
+
+    def clone
+      CompleteValue.new(self.value)
     end
   end
   
@@ -138,7 +160,8 @@ module Arff
 
   def Arff.parse_instance(line, r)
     i = Instance.new
-    classIndex = r.attributes.find(r.attributes.size - 1){ |a| a.name =~ /#{ATTRIBUTE_CLASS_NAME}/i } 
+    classIndex = r.attributes.find_index { |a| a.name =~ /^#{ATTRIBUTE_CLASS_NAME}$/i } 
+     
     line.split(/,\s*/).each_with_index { |attr, idx| 
       if attr == MISSING_VALUE
         v = MissingValue.new
@@ -155,7 +178,7 @@ module Arff
 
 end
 
-if $0 == __FILE__ then
+if $0 == __FILE__
   puts Arff::parse_attribute("@attribute number numeric")
   puts Arff::parse_attribute("@attribute name string")
   puts Arff::parse_attribute("@attribute class { a b c }")

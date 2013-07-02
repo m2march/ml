@@ -29,6 +29,19 @@ ${DATASETS}/%.mallet:
 ${INFORME}: ${SUMMARIES} 
 	make -C ${DOC_DIR}
 
+entregable:
+	zip mmiguel-h3.zip \
+		analysis/* \
+		datasets/news/* \
+		datasets/web/* \
+		datasets/news-nng/* \
+		doc/informe.pdf \
+		Makefile \
+		stopwords/* \
+		tools/*	
+
+
 clean:
 	rm -f ${SUMMARIES}
+	rm -f entregable.zip
 	make -C ${DOC_DIR} clean
