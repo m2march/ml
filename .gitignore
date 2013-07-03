@@ -1,0 +1,9 @@
+*.summary
+*.results
+*n*.arff
+*.mallet
+*.aux
+*.log
+*.out
+*.pdf
+*.toc
