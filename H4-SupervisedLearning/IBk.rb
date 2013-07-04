@@ -1,9 +1,8 @@
 require './datasets'
 
 CLASSIFIER = "weka.classifiers.lazy.IBk"
-DATASET_FILE = "short-adult.arff"
 
-dataset_lines = File.new(Datasets::DATASET_DIR+"/"+DATASET_FILE, "r").read.split("\n")
+dataset_lines = File.new(Datasets::DATASET_DIR+"/"+Datasets::DATASET_FILE, "r").read.split("\n")
 num = dataset_lines.size - dataset_lines.find_index { |x| x =~ /^@data/i }
 
 Ns = {(num * 0.1).floor => "10" , (num * 0.5).floor => "50" , (num * 0.9).floor => "90"}
