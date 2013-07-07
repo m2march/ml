@@ -183,7 +183,7 @@ if $0 == __FILE__
   puts Arff::parse_attribute("@attribute name string")
   puts Arff::parse_attribute("@attribute class { a b c }")
 
-  f = File.new("datasets/short-adult.arff", 'r')
+  f = File.new("../datasets/short-adult.arff", 'r')
   puts Arff::parse_relation(f.read).to_arff
 
 end

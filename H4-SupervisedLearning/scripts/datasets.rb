@@ -1,8 +1,8 @@
 module Datasets
   DATASET_DIR = "../datasets"
-  DATASET_NUM = /short-adult-n(\d*)\.arff/
+  DATASET_NUM = /adult-n(\d*)\.arff/
   RESULTS_DIR = "../results"
-  DATASET_FILE = "short-adult.arff"
+  DATASET_FILE = "adult.arff"
 
   def Datasets.noise_datasets
     Dir.open(DATASET_DIR) { |dir|

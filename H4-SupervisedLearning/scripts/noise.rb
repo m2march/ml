@@ -1,7 +1,7 @@
 require './arff.rb'
 
 MIN_NOISE = 0
-MAX_NOISE = 5
+MAX_NOISE = 65
 NOISE_STEP = 1
 
 ###################
