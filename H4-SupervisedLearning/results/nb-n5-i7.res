@@ -6,118 +6,118 @@ Attribute                      >50K     <=50K
                              (0.26)    (0.74)
 ==============================================
 relationship
-  Wife                          62.0      69.0
-  Own-child                     36.0     437.0
-  Husband                      550.0     665.0
-  Not-in-family                 98.0     655.0
-  Other-relative                 9.0      88.0
-  Unmarried                     37.0     287.0
-  [total]                      792.0    2201.0
+  Wife                          60.0      71.0
+  Own-child                     26.0     447.0
+  Husband                      557.0     658.0
+  Not-in-family                 99.0     654.0
+  Other-relative                14.0      83.0
+  Unmarried                     38.0     286.0
+  [total]                      794.0    2199.0
 
 marital-status
-  Married-civ-spouse           617.0     752.0
-  Divorced                      54.0     331.0
+  Married-civ-spouse           622.0     747.0
+  Divorced                      57.0     328.0
   Never-married                 86.0     914.0
-  Separated                     12.0      86.0
-  Widowed                       17.0      87.0
+  Separated                     10.0      88.0
+  Widowed                       13.0      91.0
   Married-spouse-absent          5.0      29.0
   Married-AF-spouse              2.0       3.0
-  [total]                      793.0    2202.0
+  [total]                      795.0    2200.0
 
 capital-gain
-  mean                     4318.5884  203.1111
-  std. dev.               16081.0986 1076.2494
-  weight sum                     786      2195
+  mean                     4152.5247  259.0287
+  std. dev.               15698.8257 2398.2267
+  weight sum                     788      2193
   precision                 1388.875  1388.875
 
 education
-  Bachelors                    210.0     305.0
-  Some-college                 140.0     513.0
-  11th                          11.0     111.0
-  HS-grad                      188.0     760.0
-  Prof-school                   39.0      15.0
-  Assoc-acdm                    31.0      57.0
-  Assoc-voc                     36.0      81.0
-  9th                            6.0      41.0
-  7th-8th                        7.0      58.0
+  Bachelors                    214.0     301.0
+  Some-college                 138.0     515.0
+  11th                          12.0     110.0
+  HS-grad                      186.0     762.0
+  Prof-school                   42.0      12.0
+  Assoc-acdm                    30.0      58.0
+  Assoc-voc                     37.0      80.0
+  9th                            7.0      40.0
+  7th-8th                        5.0      60.0
   12th                           2.0      23.0
-  Masters                       90.0      92.0
-  1st-4th                        2.0      13.0
+  Masters                       89.0      93.0
+  1st-4th                        1.0      14.0
   10th                          12.0      88.0
-  Doctorate                     21.0      12.0
-  5th-6th                        6.0      33.0
-  Preschool                      1.0       9.0
-  [total]                      802.0    2211.0
+  Doctorate                     20.0      13.0
+  5th-6th                        7.0      32.0
+  Preschool                      2.0       8.0
+  [total]                      804.0    2209.0
 
 education-num
-  mean                        11.299    9.6305
-  std. dev.                   2.4996    2.5441
-  weight sum                     786      2195
+  mean                       11.3135    9.6238
+  std. dev.                   2.5088     2.537
+  weight sum                     788      2193
   precision                        1         1
 
 occupation
-  Tech-support                  21.0      63.0
-  Craft-repair                 114.0     255.0
-  Other-service                 28.0     254.0
-  Sales                         83.0     248.0
-  Exec-managerial              172.0     222.0
-  Prof-specialty               184.0     214.0
-  Handlers-cleaners             15.0     111.0
-  Machine-op-inspct             33.0     162.0
-  Adm-clerical                  54.0     276.0
-  Farming-fishing               13.0      72.0
-  Transport-moving              30.0     108.0
-  Priv-house-serv                3.0      22.0
-  Protective-serv               23.0      43.0
+  Tech-support                  24.0      60.0
+  Craft-repair                 112.0     257.0
+  Other-service                 31.0     251.0
+  Sales                         77.0     254.0
+  Exec-managerial              176.0     218.0
+  Prof-specialty               186.0     212.0
+  Handlers-cleaners             19.0     107.0
+  Machine-op-inspct             31.0     164.0
+  Adm-clerical                  56.0     274.0
+  Farming-fishing               14.0      71.0
+  Transport-moving              33.0     105.0
+  Priv-house-serv                2.0      23.0
+  Protective-serv               22.0      44.0
   Armed-Forces                   1.0       2.0
-  [total]                      774.0    2052.0
+  [total]                      784.0    2042.0
 
 age
-  mean                        42.683   37.0082
-  std. dev.                  11.6921   14.0447
-  weight sum                     786      2195
+  mean                       42.7409   36.9822
+  std. dev.                  11.4358   14.1128
+  weight sum                     788      2193
   precision                   1.0735    1.0735
 
 
 
-Time taken to build model: 0.05 seconds
-Time taken to test model on training data: 0.08 seconds
+Time taken to build model: 0.07 seconds
+Time taken to test model on training data: 0.09 seconds
 
 === Error on training data ===
 
-Correctly Classified Instances        2365               79.3358 %
-Incorrectly Classified Instances       616               20.6642 %
-Kappa statistic                          0.3701
-Mean absolute error                      0.215 
-Root mean squared error                  0.4058
-Relative absolute error                 55.363  %
-Root relative squared error             92.1045 %
+Correctly Classified Instances        2404               80.6441 %
+Incorrectly Classified Instances       577               19.3559 %
+Kappa statistic                          0.4324
+Mean absolute error                      0.2129
+Root mean squared error                  0.3858
+Relative absolute error                 54.719  %
+Root relative squared error             87.4797 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-  288  498 |    a = >50K
-  118 2077 |    b = <=50K
+  348  440 |    a = >50K
+  137 2056 |    b = <=50K
 
 
 
 === Stratified cross-validation ===
 
-Correctly Classified Instances        2372               79.5706 %
-Incorrectly Classified Instances       609               20.4294 %
-Kappa statistic                          0.3763
+Correctly Classified Instances        2393               80.2751 %
+Incorrectly Classified Instances       588               19.7249 %
+Kappa statistic                          0.4181
 Mean absolute error                      0.2158
-Root mean squared error                  0.4069
-Relative absolute error                 55.5587 %
-Root relative squared error             92.3447 %
+Root mean squared error                  0.3903
+Relative absolute error                 55.4717 %
+Root relative squared error             88.5071 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-  290  496 |    a = >50K
-  113 2082 |    b = <=50K
+  336  452 |    a = >50K
+  136 2057 |    b = <=50K
 

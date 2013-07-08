@@ -4,39 +4,39 @@ Time taken to test model on training data: 2.17 seconds
 
 === Error on training data ===
 
-Correctly Classified Instances        2399               80.4764 %
-Incorrectly Classified Instances       582               19.5236 %
-Kappa statistic                          0.4273
-Mean absolute error                      0.2943
-Root mean squared error                  0.3715
-Relative absolute error                 76.5237 %
-Root relative squared error             84.7283 %
+Correctly Classified Instances        2375               79.6713 %
+Incorrectly Classified Instances       606               20.3287 %
+Kappa statistic                          0.3976
+Mean absolute error                      0.2964
+Root mean squared error                  0.3742
+Relative absolute error                 77.3516 %
+Root relative squared error             85.4951 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-  348  426 |    a = >50K
-  156 2051 |    b = <=50K
+  326  444 |    a = >50K
+  162 2049 |    b = <=50K
 
 
 
 === Stratified cross-validation ===
 
-Correctly Classified Instances        2394               80.3086 %
-Incorrectly Classified Instances       587               19.6914 %
-Kappa statistic                          0.4188
-Mean absolute error                      0.2972
-Root mean squared error                  0.3731
-Relative absolute error                 77.288  %
-Root relative squared error             85.0864 %
+Correctly Classified Instances        2372               79.5706 %
+Incorrectly Classified Instances       609               20.4294 %
+Kappa statistic                          0.3925
+Mean absolute error                      0.2996
+Root mean squared error                  0.376 
+Relative absolute error                 78.1671 %
+Root relative squared error             85.9127 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-  339  435 |    a = >50K
-  152 2055 |    b = <=50K
+  321  449 |    a = >50K
+  160 2051 |    b = <=50K
 

@@ -1,42 +1,42 @@
 
 Time taken to build model: 0.02 seconds
-Time taken to test model on training data: 4.15 seconds
+Time taken to test model on training data: 4.06 seconds
 
 === Error on training data ===
 
-Correctly Classified Instances        2169               72.7608 %
-Incorrectly Classified Instances       812               27.2392 %
+Correctly Classified Instances        2193               73.5659 %
+Incorrectly Classified Instances       788               26.4341 %
 Kappa statistic                          0     
-Mean absolute error                      0.3873
-Root mean squared error                  0.4311
-Relative absolute error                 97.6953 %
-Root relative squared error             96.8452 %
+Mean absolute error                      0.3807
+Root mean squared error                  0.4275
+Relative absolute error                 97.8531 %
+Root relative squared error             96.9419 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-    0  812 |    a = >50K
-    0 2169 |    b = <=50K
+    0  788 |    a = >50K
+    0 2193 |    b = <=50K
 
 
 
 === Stratified cross-validation ===
 
-Correctly Classified Instances        2169               72.7608 %
-Incorrectly Classified Instances       812               27.2392 %
+Correctly Classified Instances        2193               73.5659 %
+Incorrectly Classified Instances       788               26.4341 %
 Kappa statistic                          0     
-Mean absolute error                      0.3902
-Root mean squared error                  0.4354
-Relative absolute error                 98.422  %
-Root relative squared error             97.8013 %
+Mean absolute error                      0.3831
+Root mean squared error                  0.4315
+Relative absolute error                 98.4863 %
+Root relative squared error             97.8421 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-    0  812 |    a = >50K
-    0 2169 |    b = <=50K
+    0  788 |    a = >50K
+    0 2193 |    b = <=50K
 

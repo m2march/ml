@@ -7,69 +7,69 @@ Attribute                      >50K     <=50K
 ==============================================
 relationship
   Wife                          64.0      67.0
-  Own-child                     15.0     458.0
-  Husband                      562.0     653.0
-  Not-in-family                 71.0     682.0
-  Other-relative                 6.0      91.0
-  Unmarried                     26.0     298.0
-  [total]                      744.0    2249.0
+  Own-child                     17.0     456.0
+  Husband                      554.0     661.0
+  Not-in-family                 73.0     680.0
+  Other-relative                 5.0      92.0
+  Unmarried                     27.0     297.0
+  [total]                      740.0    2253.0
 
 marital-status
-  Married-civ-spouse           630.0     739.0
-  Divorced                      37.0     348.0
-  Never-married                 50.0     950.0
-  Separated                     11.0      87.0
-  Widowed                       11.0      93.0
+  Married-civ-spouse           622.0     747.0
+  Divorced                      38.0     347.0
+  Never-married                 54.0     946.0
+  Separated                      9.0      89.0
+  Widowed                       12.0      92.0
   Married-spouse-absent          4.0      30.0
   Married-AF-spouse              2.0       3.0
-  [total]                      745.0    2250.0
+  [total]                      741.0    2254.0
 
 capital-gain
-  mean                     4642.7569  184.5228
-  std. dev.               16572.6298  914.4772
-  weight sum                     738      2243
+  mean                     4709.6865  170.5961
+  std. dev.               16613.3375  849.2329
+  weight sum                     734      2247
   precision                 1388.875  1388.875
 
 
 
-Time taken to build model: 0.03 seconds
-Time taken to test model on training data: 0.07 seconds
+Time taken to build model: 0.04 seconds
+Time taken to test model on training data: 0.09 seconds
 
 === Error on training data ===
 
-Correctly Classified Instances        2340               78.4971 %
-Incorrectly Classified Instances       641               21.5029 %
-Kappa statistic                          0.2491
-Mean absolute error                      0.2221
-Root mean squared error                  0.4221
-Relative absolute error                 59.5941 %
-Root relative squared error             97.7934 %
+Correctly Classified Instances        2350               78.8326 %
+Incorrectly Classified Instances       631               21.1674 %
+Kappa statistic                          0.2578
+Mean absolute error                      0.2194
+Root mean squared error                  0.4233
+Relative absolute error                 59.0834 %
+Root relative squared error             98.2646 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-  163  575 |    a = >50K
-   66 2177 |    b = <=50K
+  166  568 |    a = >50K
+   63 2184 |    b = <=50K
 
 
 
 === Stratified cross-validation ===
 
-Correctly Classified Instances        2344               78.6313 %
-Incorrectly Classified Instances       637               21.3687 %
-Kappa statistic                          0.252 
-Mean absolute error                      0.222 
-Root mean squared error                  0.4232
-Relative absolute error                 59.5815 %
-Root relative squared error             98.0593 %
+Correctly Classified Instances        2354               78.9668 %
+Incorrectly Classified Instances       627               21.0332 %
+Kappa statistic                          0.2608
+Mean absolute error                      0.2194
+Root mean squared error                  0.4242
+Relative absolute error                 59.0911 %
+Root relative squared error             98.4762 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-  163  575 |    a = >50K
-   62 2181 |    b = <=50K
+  166  568 |    a = >50K
+   59 2188 |    b = <=50K
 

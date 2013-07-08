@@ -15,6 +15,6 @@ Datasets::noise_datasets.each { |d|
       %x( java #{CLASSIFIER} -o -K #{nVal} #{dOpt} -t #{d[0]} > #{Datasets::RESULTS_DIR}/ibk-n#{d[1]}-i#{nName}-#{dName}.res )
       }
     }
-    puts
- }
+  puts
+}
 

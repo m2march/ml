@@ -3,73 +3,73 @@ Naive Bayes Classifier
 
                               Class
 Attribute                      >50K     <=50K
-                             (0.25)    (0.75)
+                             (0.26)    (0.74)
 ==============================================
 relationship
-  Wife                          68.0      63.0
-  Own-child                     26.0     447.0
-  Husband                      548.0     667.0
+  Wife                          66.0      65.0
+  Own-child                     29.0     444.0
+  Husband                      559.0     656.0
   Not-in-family                 79.0     674.0
-  Other-relative                 7.0      90.0
-  Unmarried                     28.0     296.0
-  [total]                      756.0    2237.0
+  Other-relative                10.0      87.0
+  Unmarried                     33.0     291.0
+  [total]                      776.0    2217.0
 
 marital-status
-  Married-civ-spouse           620.0     749.0
-  Divorced                      41.0     344.0
-  Never-married                 68.0     932.0
-  Separated                     10.0      88.0
-  Widowed                       12.0      92.0
-  Married-spouse-absent          4.0      30.0
+  Married-civ-spouse           631.0     738.0
+  Divorced                      44.0     341.0
+  Never-married                 67.0     933.0
+  Separated                     13.0      85.0
+  Widowed                       13.0      91.0
+  Married-spouse-absent          7.0      27.0
   Married-AF-spouse              2.0       3.0
-  [total]                      757.0    2238.0
+  [total]                      777.0    2218.0
 
 capital-gain
-  mean                     4449.9555  225.3576
-  std. dev.               16070.4932 2308.8151
-  weight sum                     750      2231
+  mean                        4444.4   189.078
+  std. dev.               16221.2841 1095.6746
+  weight sum                     770      2211
   precision                 1388.875  1388.875
 
 
 
-Time taken to build model: 0.03 seconds
-Time taken to test model on training data: 0.07 seconds
+Time taken to build model: 0.04 seconds
+Time taken to test model on training data: 0.09 seconds
 
 === Error on training data ===
 
-Correctly Classified Instances        2352               78.8997 %
-Incorrectly Classified Instances       629               21.1003 %
-Kappa statistic                          0.244 
-Mean absolute error                      0.2298
-Root mean squared error                  0.3916
-Relative absolute error                 61.0106 %
-Root relative squared error             90.2445 %
+Correctly Classified Instances        2315               77.6585 %
+Incorrectly Classified Instances       666               22.3415 %
+Kappa statistic                          0.2409
+Mean absolute error                      0.2317
+Root mean squared error                  0.427 
+Relative absolute error                 60.4487 %
+Root relative squared error             97.5587 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-  143  607 |    a = >50K
-   22 2209 |    b = <=50K
+  163  607 |    a = >50K
+   59 2152 |    b = <=50K
 
 
 
 === Stratified cross-validation ===
 
-Correctly Classified Instances        2351               78.8662 %
-Incorrectly Classified Instances       630               21.1338 %
-Kappa statistic                          0.2459
-Mean absolute error                      0.2303
-Root mean squared error                  0.3938
-Relative absolute error                 61.1441 %
-Root relative squared error             90.749  %
+Correctly Classified Instances        2317               77.7256 %
+Incorrectly Classified Instances       664               22.2744 %
+Kappa statistic                          0.2415
+Mean absolute error                      0.2318
+Root mean squared error                  0.4274
+Relative absolute error                 60.476  %
+Root relative squared error             97.652  %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-  146  604 |    a = >50K
-   26 2205 |    b = <=50K
+  162  608 |    a = >50K
+   56 2155 |    b = <=50K
 

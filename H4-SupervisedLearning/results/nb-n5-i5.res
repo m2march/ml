@@ -6,95 +6,95 @@ Attribute                      >50K     <=50K
                              (0.26)    (0.74)
 ==============================================
 relationship
-  Wife                          62.0      69.0
-  Own-child                     36.0     437.0
-  Husband                      550.0     665.0
-  Not-in-family                 98.0     655.0
-  Other-relative                 9.0      88.0
-  Unmarried                     37.0     287.0
-  [total]                      792.0    2201.0
+  Wife                          60.0      71.0
+  Own-child                     26.0     447.0
+  Husband                      557.0     658.0
+  Not-in-family                 99.0     654.0
+  Other-relative                14.0      83.0
+  Unmarried                     38.0     286.0
+  [total]                      794.0    2199.0
 
 marital-status
-  Married-civ-spouse           617.0     752.0
-  Divorced                      54.0     331.0
+  Married-civ-spouse           622.0     747.0
+  Divorced                      57.0     328.0
   Never-married                 86.0     914.0
-  Separated                     12.0      86.0
-  Widowed                       17.0      87.0
+  Separated                     10.0      88.0
+  Widowed                       13.0      91.0
   Married-spouse-absent          5.0      29.0
   Married-AF-spouse              2.0       3.0
-  [total]                      793.0    2202.0
+  [total]                      795.0    2200.0
 
 capital-gain
-  mean                     4318.5884  203.1111
-  std. dev.               16081.0986 1076.2494
-  weight sum                     786      2195
+  mean                     4152.5247  259.0287
+  std. dev.               15698.8257 2398.2267
+  weight sum                     788      2193
   precision                 1388.875  1388.875
 
 education
-  Bachelors                    210.0     305.0
-  Some-college                 140.0     513.0
-  11th                          11.0     111.0
-  HS-grad                      188.0     760.0
-  Prof-school                   39.0      15.0
-  Assoc-acdm                    31.0      57.0
-  Assoc-voc                     36.0      81.0
-  9th                            6.0      41.0
-  7th-8th                        7.0      58.0
+  Bachelors                    214.0     301.0
+  Some-college                 138.0     515.0
+  11th                          12.0     110.0
+  HS-grad                      186.0     762.0
+  Prof-school                   42.0      12.0
+  Assoc-acdm                    30.0      58.0
+  Assoc-voc                     37.0      80.0
+  9th                            7.0      40.0
+  7th-8th                        5.0      60.0
   12th                           2.0      23.0
-  Masters                       90.0      92.0
-  1st-4th                        2.0      13.0
+  Masters                       89.0      93.0
+  1st-4th                        1.0      14.0
   10th                          12.0      88.0
-  Doctorate                     21.0      12.0
-  5th-6th                        6.0      33.0
-  Preschool                      1.0       9.0
-  [total]                      802.0    2211.0
+  Doctorate                     20.0      13.0
+  5th-6th                        7.0      32.0
+  Preschool                      2.0       8.0
+  [total]                      804.0    2209.0
 
 education-num
-  mean                        11.299    9.6305
-  std. dev.                   2.4996    2.5441
-  weight sum                     786      2195
+  mean                       11.3135    9.6238
+  std. dev.                   2.5088     2.537
+  weight sum                     788      2193
   precision                        1         1
 
 
 
-Time taken to build model: 0.04 seconds
-Time taken to test model on training data: 0.07 seconds
+Time taken to build model: 0.06 seconds
+Time taken to test model on training data: 0.1 seconds
 
 === Error on training data ===
 
-Correctly Classified Instances        2323               77.9269 %
-Incorrectly Classified Instances       658               22.0731 %
-Kappa statistic                          0.27  
-Mean absolute error                      0.2223
-Root mean squared error                  0.4163
-Relative absolute error                 57.2409 %
-Root relative squared error             94.4809 %
+Correctly Classified Instances        2392               80.2415 %
+Incorrectly Classified Instances       589               19.7585 %
+Kappa statistic                          0.428 
+Mean absolute error                      0.2206
+Root mean squared error                  0.3924
+Relative absolute error                 56.7024 %
+Root relative squared error             88.9752 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-  186  600 |    a = >50K
-   58 2137 |    b = <=50K
+  356  432 |    a = >50K
+  157 2036 |    b = <=50K
 
 
 
 === Stratified cross-validation ===
 
-Correctly Classified Instances        2323               77.9269 %
-Incorrectly Classified Instances       658               22.0731 %
-Kappa statistic                          0.2753
-Mean absolute error                      0.2229
-Root mean squared error                  0.417 
-Relative absolute error                 57.3851 %
-Root relative squared error             94.6483 %
+Correctly Classified Instances        2377               79.7383 %
+Incorrectly Classified Instances       604               20.2617 %
+Kappa statistic                          0.4045
+Mean absolute error                      0.2225
+Root mean squared error                  0.3956
+Relative absolute error                 57.1975 %
+Root relative squared error             89.7044 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-  193  593 |    a = >50K
-   65 2130 |    b = <=50K
+  332  456 |    a = >50K
+  148 2045 |    b = <=50K
 

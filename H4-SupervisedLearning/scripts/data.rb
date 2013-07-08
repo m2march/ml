@@ -46,7 +46,7 @@ def generate_dat(tec, y, name, header)
 
   File.open(DATAS_DIR+"/"+name, "w") { |f|
     f.write(header+"\n")
-    by_noise.each.to_a.sort_by { |key, value| key}.each { |key, value|
+    by_noise.each.to_a.sort_by { |key, value| key.to_i }.each { |key, value|
       f.write("#{key} #{value.collect{ |x| x.value }.join(' ')}\n")
     }
   }

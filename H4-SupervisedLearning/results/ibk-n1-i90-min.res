@@ -1,42 +1,42 @@
 
-Time taken to build model: 0.03 seconds
-Time taken to test model on training data: 4.27 seconds
+Time taken to build model: 0.02 seconds
+Time taken to test model on training data: 4.1 seconds
 
 === Error on training data ===
 
-Correctly Classified Instances        2249               75.4445 %
-Incorrectly Classified Instances       732               24.5555 %
+Correctly Classified Instances        2247               75.3774 %
+Incorrectly Classified Instances       734               24.6226 %
 Kappa statistic                          0     
-Mean absolute error                      0.36  
-Root mean squared error                  0.4135
-Relative absolute error                 97.1398 %
-Root relative squared error             96.0596 %
+Mean absolute error                      0.3609
+Root mean squared error                  0.4143
+Relative absolute error                 97.2041 %
+Root relative squared error             96.1613 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-    0  732 |    a = >50K
-    0 2249 |    b = <=50K
+    0  734 |    a = >50K
+    0 2247 |    b = <=50K
 
 
 
 === Stratified cross-validation ===
 
-Correctly Classified Instances        2249               75.4445 %
-Incorrectly Classified Instances       732               24.5555 %
+Correctly Classified Instances        2247               75.3774 %
+Incorrectly Classified Instances       734               24.6226 %
 Kappa statistic                          0     
-Mean absolute error                      0.3633
-Root mean squared error                  0.4185
-Relative absolute error                 98.018  %
-Root relative squared error             97.2323 %
+Mean absolute error                      0.3641
+Root mean squared error                  0.4192
+Relative absolute error                 98.0708 %
+Root relative squared error             97.3105 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-    0  732 |    a = >50K
-    0 2249 |    b = <=50K
+    0  734 |    a = >50K
+    0 2247 |    b = <=50K
 

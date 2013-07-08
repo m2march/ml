@@ -36,7 +36,8 @@ f.close
   puts "Noise: " + noise.to_s
   nr = r.clone
   apply_noise(nr, noise/100.0)
-  f = File.new(filename.split(".")[0] + "-n" + noise.to_s + ".arff", "w")
+  puts filename.split(".arff")
+  f = File.new(filename.split(".arff")[0] + "-n" + noise.to_s + ".arff", "w")
   f.write(nr.to_arff)
   f.close
 }

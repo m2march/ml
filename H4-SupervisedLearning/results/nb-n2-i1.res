@@ -6,54 +6,54 @@ Attribute            >50K  <=50K
                    (0.25) (0.75)
 =================================
 relationship
-  Wife                61.0   70.0
+  Wife                62.0   69.0
   Own-child           19.0  454.0
-  Husband            553.0  662.0
-  Not-in-family       77.0  676.0
-  Other-relative       5.0   92.0
+  Husband            561.0  654.0
+  Not-in-family       84.0  669.0
+  Other-relative       7.0   90.0
   Unmarried           25.0  299.0
-  [total]            740.0 2253.0
+  [total]            758.0 2235.0
 
 
 
-Time taken to build model: 0.01 seconds
-Time taken to test model on training data: 0.05 seconds
+Time taken to build model: 0.02 seconds
+Time taken to test model on training data: 0.09 seconds
 
 === Error on training data ===
 
-Correctly Classified Instances        2247               75.3774 %
-Incorrectly Classified Instances       734               24.6226 %
+Correctly Classified Instances        2229               74.7736 %
+Incorrectly Classified Instances       752               25.2264 %
 Kappa statistic                          0     
-Mean absolute error                      0.2991
-Root mean squared error                  0.3862
-Relative absolute error                 80.5555 %
-Root relative squared error             89.64   %
+Mean absolute error                      0.3045
+Root mean squared error                  0.3897
+Relative absolute error                 80.6846 %
+Root relative squared error             89.7175 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-    0  734 |    a = >50K
-    0 2247 |    b = <=50K
+    0  752 |    a = >50K
+    0 2229 |    b = <=50K
 
 
 
 === Stratified cross-validation ===
 
-Correctly Classified Instances        2247               75.3774 %
-Incorrectly Classified Instances       734               24.6226 %
+Correctly Classified Instances        2229               74.7736 %
+Incorrectly Classified Instances       752               25.2264 %
 Kappa statistic                          0     
-Mean absolute error                      0.2997
-Root mean squared error                  0.3868
-Relative absolute error                 80.711  %
-Root relative squared error             89.7866 %
+Mean absolute error                      0.3049
+Root mean squared error                  0.3902
+Relative absolute error                 80.8116 %
+Root relative squared error             89.8507 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-    0  734 |    a = >50K
-    0 2247 |    b = <=50K
+    0  752 |    a = >50K
+    0 2229 |    b = <=50K
 

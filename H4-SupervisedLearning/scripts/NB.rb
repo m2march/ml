@@ -11,7 +11,6 @@ def obtain_rank
 end
 
 chi_rank = obtain_rank
-puts chi_rank.size()
 
 Datasets::noise_datasets.each { |d|
   (0..chi_rank.size()-1).each { |c|

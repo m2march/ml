@@ -1,42 +1,42 @@
 
-Time taken to build model: 0.46 seconds
-Time taken to test model on training data: 0.08 seconds
+Time taken to build model: 0.41 seconds
+Time taken to test model on training data: 0.07 seconds
 
 === Error on training data ===
 
-Correctly Classified Instances        2572               86.2798 %
-Incorrectly Classified Instances       409               13.7202 %
-Kappa statistic                          0.6242
-Mean absolute error                      0.2143
-Root mean squared error                  0.3262
-Relative absolute error                 54.0469 %
-Root relative squared error             73.2776 %
+Correctly Classified Instances        2608               87.4874 %
+Incorrectly Classified Instances       373               12.5126 %
+Kappa statistic                          0.6545
+Mean absolute error                      0.2011
+Root mean squared error                  0.3162
+Relative absolute error                 51.6956 %
+Root relative squared error             71.7122 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-  505  307 |    a = >50K
-  102 2067 |    b = <=50K
+  517  271 |    a = >50K
+  102 2091 |    b = <=50K
 
 
 
 === Stratified cross-validation ===
 
-Correctly Classified Instances        2366               79.3693 %
-Incorrectly Classified Instances       615               20.6307 %
-Kappa statistic                          0.4311
-Mean absolute error                      0.2648
-Root mean squared error                  0.3946
-Relative absolute error                 66.7903 %
-Root relative squared error             88.6427 %
+Correctly Classified Instances        2355               79.0003 %
+Incorrectly Classified Instances       626               20.9997 %
+Kappa statistic                          0.4118
+Mean absolute error                      0.2693
+Root mean squared error                  0.4022
+Relative absolute error                 69.239  %
+Root relative squared error             91.1954 %
 Total Number of Instances             2981     
 
 
 === Confusion Matrix ===
 
     a    b   <-- classified as
-  394  418 |    a = >50K
-  197 1972 |    b = <=50K
+  374  414 |    a = >50K
+  212 1981 |    b = <=50K
 

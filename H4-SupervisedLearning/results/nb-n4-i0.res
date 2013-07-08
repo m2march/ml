@@ -3,20 +3,20 @@ Naive Bayes Classifier
 
                 Class
 Attribute        >50K  <=50K
-               (0.27) (0.73)
+               (0.26) (0.74)
 =============================
 
 
-Time taken to build model: 0.01 seconds
-Time taken to test model on training data: 0.04 seconds
+Time taken to build model: 0.02 seconds
+Time taken to test model on training data: 0.05 seconds
 
 === Error on training data ===
 
-Correctly Classified Instances        2187               73.3646 %
-Incorrectly Classified Instances       794               26.6354 %
+Correctly Classified Instances        2207               74.0356 %
+Incorrectly Classified Instances       774               25.9644 %
 Kappa statistic                          0     
-Mean absolute error                      0.3909
-Root mean squared error                  0.4421
+Mean absolute error                      0.3845
+Root mean squared error                  0.4384
 Relative absolute error                100      %
 Root relative squared error            100      %
 Total Number of Instances             2981     
@@ -25,18 +25,18 @@ Total Number of Instances             2981
 === Confusion Matrix ===
 
     a    b   <-- classified as
-    0  794 |    a = >50K
-    0 2187 |    b = <=50K
+    0  774 |    a = >50K
+    0 2207 |    b = <=50K
 
 
 
 === Stratified cross-validation ===
 
-Correctly Classified Instances        2187               73.3646 %
-Incorrectly Classified Instances       794               26.6354 %
+Correctly Classified Instances        2207               74.0356 %
+Incorrectly Classified Instances       774               25.9644 %
 Kappa statistic                          0     
-Mean absolute error                      0.3909
-Root mean squared error                  0.4421
+Mean absolute error                      0.3845
+Root mean squared error                  0.4384
 Relative absolute error                100      %
 Root relative squared error            100      %
 Total Number of Instances             2981     
@@ -45,6 +45,6 @@ Total Number of Instances             2981
 === Confusion Matrix ===
 
     a    b   <-- classified as
-    0  794 |    a = >50K
-    0 2187 |    b = <=50K
+    0  774 |    a = >50K
+    0 2207 |    b = <=50K
 
