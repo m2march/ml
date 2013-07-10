@@ -38,11 +38,17 @@ El presente trabajo presenta una comparativa entre 3 métodos de aprendizaje aut
 
 \section{Ejecuciones}
 
-El dataset \testsf{adult} consiste de datos poblacionales obtenidos a partir de censos. Cada instancia dentro del juego de datos hace referencia a una persona censada y posee atributos como la edad, nivel educativo, estado civíl, país de origen, otras métricas económicas y el hecho de si gana o no más de cincuentamil dólares anuales. Este último atributo es el objetivo de la clasificación.
+El dataset \textsf{adult} consiste de datos poblacionales obtenidos a partir de censos. Cada instancia dentro del juego de datos hace referencia a una persona censada y posee atributos como la edad, nivel educativo, estado civíl, país de origen, otras métricas económicas y el hecho de si gana o no más de cincuentamil dólares anuales. Este último atributo es el objetivo de la clasificación.
 
-El objetivo del trabajo es lograr comparaciones de las capacidades, fuertes y debilidades de distintos clasificadores bajo 3 ejes de cambio: la técnica utilizada, la cantidad de ruido en la muestra y la especificidad del clasificador. Un clasificador es más específico cuanto más finas son las desiciones que toma para exponer un resultado. Esto es fácil de ver en técnicas como \emph{árboles de desición}\footnote{http://en.wikipedia.org/wiki/Decision\_tree\_learning} o \emph{aprendizaje basado en instancias}\footnote{http://en.wikipedia.org/wiki/K-nearest\_neighbor\_algorithm}. En el primer caso un clasificador es más específico cuanto más profundo es el árbol. En el segundo caso un clasificador es más específico si considera menor cantidad de instancias.
+El objetivo del trabajo es lograr comparaciones de las capacidades, fuertes y debilidades de distintos clasificadores bajo 3 ejes de cambio: la técnica utilizada, la cantidad de ruido en la muestra y la especificidad del clasificador. Un clasificador es más específico cuanto más finas son las desiciones que toma para exponer un resultado. Esto es fácil de ver en técnicas como \emph{árboles de desición}\footnote{http://en.wikipedia.org/wiki/Decision\_tree\_learning} o \emph{aprendizaje basado en instancias}. En el primer caso un clasificador es más específico cuanto más profundo es el árbol. En el segundo caso un clasificador es más específico si considera menor cantidad de instancias.
+
+En el caso particular del \emph{aprendizaje basado en instancias}, el algoritmo utilizado (\textsf{IBk}\footnote{http://en.wikipedia.org/wiki/K-nearest\_neighbor\_algorithm}) permite definir una función para establecer la influencia de las instancias en la clasificación, basado en la distancia a la nueva instancia a clasificar. Uno de los clasificadores no tuvo función de distancia (nomenclado \textsf{no}), por lo que todas las instancias consideradas tenían igual peso en la decisión. Los otros dos clasificadores tuvieron como función de distancias $1/d$ (\textsf{inv}) y $1-d$ (\textsf{min}), con $d$ la distancia entre las intancias. 
+
+Para cada uno de los clasificadores creados (distintas técnicas, distinta especificidad), se evaluó su precisión sobre el mismo juego de datos con distintos niveles de ruido sobre la clasificación. El rudio varió de 0 a 65\%, creciendo en un 1\% cada vez. En un nivel de ruido $x$, $x$\% de las instancias tuvieron cambiada su clase. La precisión se midió como el promedio del porcentaje de clasificaciones correctas para cada uno de los 10 \emph{folds} de la evaluación hecha para el clasificador con el juego de datos ruidoso.
 
 \section{Resultados}
+
+A continuación presentamos cinco gráficos resumiendo los resultados. Agrupamos los clasificadores por técnica y mostramos su precisión sobre nivel de ruido. En el caso de la técnica de clasificación \emph{basada en instancias}, se agruparon además los clasificadores por el tipo de función de distancia utilizada. 
 
 \begin{figure}
 \centering
