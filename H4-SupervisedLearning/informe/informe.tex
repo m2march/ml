@@ -34,10 +34,13 @@
 
 \section{Introducción}
 
-El presente trabajo presenta una comparativa entre 3 métodos de aprendizaje automático para estimar clasificadores. Se usaron tres aproximaciones distintas al problema de la clasificación: \emph{clasificación estadística} (en particular \textsf{naive bayes}), \emph{árboles de desición} y \emph{aprendizaje basado en instancias}. Para evaluar los métodos se realizaron \emph{cross-validation} con 10 folds sobre el dataset \textsf{adult}\footnote{\url{http://archive.ics.uci.edu/ml/datasets/Adult}}. Además, para hacer una comparación más completa, se ajustaron las configuraciones de los métodos para probar clasificadores más genéricos y más específicos, y todos estos se probaron sobre muestras de datos con variable ruido sobre el valor de la clase objetivo. 
-
+El presente trabajo presenta una comparativa entre 3 métodos de aprendizaje automático para estimar clasificadores. Se usaron tres aproximaciones distintas al problema de la clasificación: \emph{clasificación estadística} (en particular \textsf{naive bayes}), \emph{árboles de desición} y \emph{aprendizaje basado en instancias}. Para evaluar los métodos se realizaron \emph{cross-validation} con 10 folds sobre el dataset \textsf{adult}\footnote{\url{http://archive.ics.uci.edu/ml/datasets/Adult}}. Además, para hacer una comparación más completa, se ajustaron las configuraciones de los métodos para probar clasificadores más genéricos y más específicos, y todos estos se probaron sobre muestras de datos con ruido variable sobre el valor de la clase objetivo. 
 
 \section{Ejecuciones}
+
+El dataset \testsf{adult} consiste de datos poblacionales obtenidos a partir de censos. Cada instancia dentro del juego de datos hace referencia a una persona censada y posee atributos como la edad, nivel educativo, estado civíl, país de origen, otras métricas económicas y el hecho de si gana o no más de cincuentamil dólares anuales. Este último atributo es el objetivo de la clasificación.
+
+El objetivo del trabajo es lograr comparaciones de las capacidades, fuertes y debilidades de distintos clasificadores bajo 3 ejes de cambio: la técnica utilizada, la cantidad de ruido en la muestra y la especificidad del clasificador. Un clasificador es más específico cuanto más finas son las desiciones que toma para exponer un resultado. Esto es fácil de ver en técnicas como \emph{árboles de desición}\footnote{http://en.wikipedia.org/wiki/Decision\_tree\_learning} o \emph{aprendizaje basado en instancias}\footnote{http://en.wikipedia.org/wiki/K-nearest\_neighbor\_algorithm}. En el primer caso un clasificador es más específico cuanto más profundo es el árbol. En el segundo caso un clasificador es más específico si considera menor cantidad de instancias.
 
 \section{Resultados}
 
