@@ -1,6 +1,6 @@
 
 Time taken to build model: 0.02 seconds
-Time taken to test model on training data: 3.58 seconds
+Time taken to test model on training data: 3.68 seconds
 
 === Error on training data ===
 
