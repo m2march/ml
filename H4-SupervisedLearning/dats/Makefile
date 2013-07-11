@@ -10,7 +10,7 @@ ibk-%.svg: ibk-%.p ibk-plot.p ibk-%.dat
 	gnuplot -e "load '$<'; load 'ibk-plot.p';"
   
 
-%.pdf: %.p %.dat
+%.svg: %.p %.dat
 	gnuplot $<
 
 
