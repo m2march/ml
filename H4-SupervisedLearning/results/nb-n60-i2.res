@@ -26,8 +26,8 @@ marital-status
 
 
 
-Time taken to build model: 0.03 seconds
-Time taken to test model on training data: 0.06 seconds
+Time taken to build model: 0.02 seconds
+Time taken to test model on training data: 0.07 seconds
 
 === Error on training data ===
 

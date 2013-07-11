@@ -58,7 +58,7 @@ education-num
 
 
 Time taken to build model: 0.06 seconds
-Time taken to test model on training data: 0.11 seconds
+Time taken to test model on training data: 0.1 seconds
 
 === Error on training data ===
 

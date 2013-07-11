@@ -74,8 +74,8 @@ occupation
 
 
 
-Time taken to build model: 0.1 seconds
-Time taken to test model on training data: 0.14 seconds
+Time taken to build model: 0.06 seconds
+Time taken to test model on training data: 0.09 seconds
 
 === Error on training data ===
 

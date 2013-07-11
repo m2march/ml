@@ -117,7 +117,7 @@ race
 
 
 Time taken to build model: 0.11 seconds
-Time taken to test model on training data: 0.12 seconds
+Time taken to test model on training data: 0.11 seconds
 
 === Error on training data ===
 

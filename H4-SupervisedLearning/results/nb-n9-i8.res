@@ -87,7 +87,7 @@ hours-per-week
 
 
 Time taken to build model: 0.09 seconds
-Time taken to test model on training data: 0.12 seconds
+Time taken to test model on training data: 0.1 seconds
 
 === Error on training data ===
 

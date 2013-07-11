@@ -80,8 +80,8 @@ age
 
 
 
-Time taken to build model: 0.07 seconds
-Time taken to test model on training data: 0.1 seconds
+Time taken to build model: 0.08 seconds
+Time taken to test model on training data: 0.09 seconds
 
 === Error on training data ===
 

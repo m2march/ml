@@ -32,8 +32,8 @@ capital-gain
 
 
 
-Time taken to build model: 0.04 seconds
-Time taken to test model on training data: 0.09 seconds
+Time taken to build model: 0.05 seconds
+Time taken to test model on training data: 0.11 seconds
 
 === Error on training data ===
 
